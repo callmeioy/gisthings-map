@@ -1,0 +1,10 @@
+{
+    "presets": ["@babel/env", "@babel/preset-react"],
+    "env": {
+        "development": {
+          "plugins": [
+            "react-hot-loader/babel"  //开启模块热替换
+          ]
+        }
+    }
+}
