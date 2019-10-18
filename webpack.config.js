@@ -49,12 +49,13 @@ module.exports = {
     alias: { // 设置访问路径别名 ，便于引入
       '@cesium': path.resolve(__dirname, cesiumSource),
       '@assets': path.resolve(__dirname, 'assets'),
+      '@src': path.resolve(__dirname, 'src'),
     },
   }, // 该resolve属性允许我们指定Webpack将解析哪些扩展
   output: {
     path: path.resolve(__dirname, "dist"),
     // publicPath: "/dist/",
-    filename: "[name].[hash].[date].js",
+    filename: "[name].[hash].js",
     //需要编译Cesium中的多行字符串 
     sourcePrefix: ''
   },
@@ -76,7 +77,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({template:'src/index.html',style:'src/style.css'}),
     new webpack.HotModuleReplacementPlugin(), // 热加载
-    // 拷贝Cesium 资源、控价、web worker到静态目录 
+    // 拷贝Cesium 资源、控件、web worker到静态目录 
     new CopyWebpackPlugin([ 
       { from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' },
       { from: path.join(cesiumSource, 'Assets'), to: 'Assets' },

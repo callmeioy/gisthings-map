@@ -8,11 +8,11 @@ class App extends React.Component{
         super(props);
         this.viewer = null;
         this.img = imgurl;
+        console.log('props' ,props)
     }
     render(){
         return (
-            <div id='cesium-container'>
-            </div>
+            <div id='cesium-container'></div>
         );
     }
     componentDidMount(){
@@ -33,6 +33,7 @@ class App extends React.Component{
     this.viewer._cesiumWidget._creditContainer.style.display = 'none';
     // this.viewer.canvas.style.width='100%';
     window['viewer'] = this.viewer;
+    console.log('store',this.context.store)
     }
 }
 export default hot(module)(App);
