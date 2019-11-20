@@ -19,6 +19,7 @@ module.exports = {
   module: {
     //解决Critical dependency: require function is used in a way in which dependencies cannot be statically extracted的问题
     unknownContextCritical: false,
+    // loader 加载模块时对文件预处理 css,image,ts..
     rules: [
       {
         test: /\.(js|jsx)$/,
@@ -28,11 +29,16 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        // use: ['style-loader', 'css-loader','sass-loader']
+        use:[
+          {loader:'style-loader'},
+          {loader:'css-loader'},
+          {loader:'sass-loader'},
+        ]
       },
       //图片字体，json资源
       {
-        test: /\.(gif|jpg|png|woff|svg|eot|ttf|topojson)$/,
+        test: /\.(gif|jpg|png|woff|svg|eot|ttf|json)$/,
         loader: 'url-loader',
         // options: {
         //     limit: 8192,
@@ -53,7 +59,7 @@ module.exports = {
     },
   }, // 该resolve属性允许我们指定Webpack将解析哪些扩展
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     // publicPath: "/dist/",
     filename: '[name].[hash].js',
     //需要编译Cesium中的多行字符串
@@ -68,14 +74,15 @@ module.exports = {
     fs: 'empty'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, './dist'),
     port: 3000,
     hot: true
   },
   devtool: '#eval-source-map', // 映射源码
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: 'src/index.html', style: 'src/style.css' }),
+    new HtmlWebpackPlugin({ template: 'src/index.html', style: 'src/style.scss' }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(), // 热加载
     // 拷贝Cesium 资源、控件、web worker到静态目录
     new CopyWebpackPlugin([
@@ -87,5 +94,5 @@ module.exports = {
       //Cesium载入静态的资源的相对路径
       CESIUM_BASE_URL: JSON.stringify('')
     })
-  ]
+  ],
 };
