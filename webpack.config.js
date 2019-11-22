@@ -38,16 +38,20 @@ module.exports = {
       },
       //图片字体，json资源
       {
-        test: /\.(gif|jpg|png|woff|svg|eot|ttf|json)$/,
-        loader: 'url-loader',
-        // options: {
-        //     limit: 8192,
-        //     name: '[name].[hash].[ext]',
-        //     useRelativePath: false,
-        //     outputPath: './static/assets',
-        //     publicPath: './static/assets',
-        // }
-      },
+        test:/\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf|json)$/,
+        use:['file-loader']
+      }
+      // {
+      //   test: /\.(gif|jpg|png|woff|svg|eot|ttf|json)$/,
+      //   loader: 'url-loader',
+      //   // options: {
+      //   //     limit: 8192,
+      //   //     name: '[name].[hash].[ext]',
+      //   //     useRelativePath: false,
+      //   //     outputPath: './static/assets',
+      //   //     publicPath: './static/assets',
+      //   // }
+      // },
     ]
   },
   resolve: {
