@@ -22,7 +22,7 @@ class App extends React.Component{
             // animation:false,
             // baseLayerPicker:true,
             // fullscreenButton:true,
-            // geocoder:true,
+            geocoder:false,
             // homeButton:true,
             // infoBox:false,
             // sceneModePicker:false,
@@ -35,7 +35,8 @@ class App extends React.Component{
         this.viewer._cesiumWidget._creditContainer.style.display = 'none';
         this.viewer.canvas.style.width='100%';
         window['viewer'] = this.viewer;
-        console.log('store',this.context.store)
+        console.log('store',this.context.store);
+        console.log('ggggggggdfddfgggggg')
         }
 }
 export default hot(module)(App);
