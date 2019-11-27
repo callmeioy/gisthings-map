@@ -12,16 +12,15 @@ const cesiumWorkers = '../Build/Cesium/Workers';
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    gisthings: './src/index.js'
   },
-  // 打包模式,
-  mode: 'development',
-  devServer: {
-    contentBase: path.join(__dirname, './dist'),
-    port: 3000,
-    hot: true
+  // 打包编译输出js 的配置
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].[hash].js',
+    //需要编译Cesium中的多行字符串
+    sourcePrefix: ''
   },
-  devtool: '#eval-source-map', // 映射源码
   module: {
     //解决Critical dependency: require function is used in a way in which dependencies cannot be statically extracted的问题
     unknownContextCritical: false,
@@ -58,13 +57,6 @@ module.exports = {
       'react-dom': '@hot-loader/react-dom' // 热加载
     },
   },
-  // 打包编译输出js 的配置
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].[hash].js',
-    //需要编译Cesium中的多行字符串
-    sourcePrefix: ''
-  },
   amd: {
     //允许Cesium兼容 webpack的require方式
     toUrlUndefined: true
@@ -75,18 +67,18 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: 'src/index.html', style: 'src/style.scss' }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(), // 热加载
+    new HtmlWebpackPlugin({ title: 'gisthings 地理事物展示', template: 'src/index.html', style: 'src/style.scss' }),
     // 拷贝Cesium 资源、控件、web worker到静态目录
     new CopyWebpackPlugin([
       { from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' },
       { from: path.join(cesiumSource, 'Assets'), to: 'Assets' },
       { from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }
     ]),
+    // 定义浏览器环境的全局变量 （window）
     new webpack.DefinePlugin({
       //Cesium载入静态的资源的相对路径
-      CESIUM_BASE_URL: JSON.stringify('')
+      CESIUM_BASE_URL: JSON.stringify(''),
+      HJNAME:'何军',
     })
   ],
 };
