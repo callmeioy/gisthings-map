@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "node server.js"
+    "preview": "node server.js"
   },
   "author": "hejun",
   "license": "MIT",
@@ -51,10 +51,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callmeioy/opgis-map-react.git"
+    "url": "https://github.com/callmeioy/gisthings-map.git"
   },
   "bugs": {
-    "url": "https://github.com/callmeioy/opgis-map-react/issues"
+    "url": "https://github.com/callmeioy/gisthings-map/issues"
   },
-  "homepage": "https://github.com/callmeioy/opgis-map-react#readme"
+  "homepage": "https://github.com/callmeioy/gisthings-map#readme"
 }
