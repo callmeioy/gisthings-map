@@ -3,8 +3,14 @@
     "env": {
         "development": {
           "plugins": [
-            "react-hot-loader/babel"  //开启模块热替换
+            "react-hot-loader/babel",  //开启模块热替换
+            ["import", {
+              "libraryName": "antd",
+              "libraryDirectory": "es",
+              "style": "css" // `style: true` 会加载 less 文件
+            }]
           ]
         }
     }
+
 }
