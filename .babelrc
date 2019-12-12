@@ -4,11 +4,12 @@
         "development": {
           "plugins": [
             "react-hot-loader/babel",  //开启模块热替换
-            ["import", {
+            ["import", { // 解析 ant ui 框架
               "libraryName": "antd",
               "libraryDirectory": "es",
               "style": "css" // `style: true` 会加载 less 文件
-            }]
+            }],
+            "@babel/plugin-proposal-class-properties" // 用于解析es6 classProperties ,解决 es6 class 新特性报错
           ]
         }
     }

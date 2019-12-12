@@ -8,7 +8,7 @@ class LayerManager extends React.Component {
   componentDidMount(){
 
   }
-  addLayer(){
+  addLayer(e){
     
   }
 
