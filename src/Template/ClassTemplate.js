@@ -30,3 +30,4 @@ class A{
 	}
 
 }
+export {A}
