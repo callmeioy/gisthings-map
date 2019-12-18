@@ -3,9 +3,12 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CesiumViewer from './module/CesiumViewer/CesiumViewerCom';
-require('@cesium/Widgets/widgets.css'); // 引入全局样式
-require('./style.scss');
+import {CesiumViewerCom} from './module/CesiumViewer/CesiumViewerCom';
+// require('@cesium/Widgets/widgets.css'); // 引入全局样式
+// require('./style.scss');
+import './style.scss'
+import '@cesium/Widgets/widgets.css'
+
 import * as Cesium from '@cesium/Cesium'
 import {createStore} from 'redux';
 import {Provider} from 'react-redux'
@@ -19,7 +22,7 @@ const store = createStore(rootReducer)
 
 ReactDOM.render(
     <Provider store = {store}>
-        <CesiumViewer />
+        <CesiumViewerCom />
     </Provider>,
     document.getElementById('root')
     );

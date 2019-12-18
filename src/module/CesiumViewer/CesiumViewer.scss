@@ -6,8 +6,12 @@
     overflow: hidden;
 }
 #func-list{
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 30%;
     left: 10%;
+}
+#func-component-container{
+    position: absolute;
+    z-index: 1;
 }

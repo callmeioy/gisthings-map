@@ -1,11 +1,19 @@
-class VisualFieldAnalysis{
+import {ViewerService} from '@src/services/ViewerService'
+class VisualFieldAnalysisService{
   viewer = null;
 	constructor(options){
-		 this.viewer = options.viewer;
 	}
 
-	init(options) {
-    console.log('init')
+	init() {
+    if(!viewer) this.init.viewer = ViewerService.getViewer();
+	}
+
+	createFrustum() {
+		console.log('createFrustum',this.viewer);
+	}
+
+	destroy(){
+		console.log('destory',this);
 	}
 }
-export {VisualFieldAnalysis}
+export {VisualFieldAnalysisService}

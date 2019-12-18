@@ -1,5 +1,6 @@
 import {VisualFieldAnalysisCom} from './VisualFieldAnalysis/VisualFieldAnalysisCom'
-import {LayerManagerCom} from './LayerManager/LayerManagerCom'
+import {LayerManagerCom} from  '@src/module/LayerManager/LayerManagerCom'
+
 
 class ComponentModuleList{
  
