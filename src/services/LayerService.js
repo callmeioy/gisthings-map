@@ -40,7 +40,7 @@ class LayerService{
 		// 加载成功
 		tileset.readyPromise.then( t =>{
 
-			options.location && ViewerService.viewer.flyTo(tileset);
+			options.location && ViewerService.viewer.flyTo(tileset,{duration: 0.5});
 			console.info('%c 加载成功','color:green',t);
 		})
 

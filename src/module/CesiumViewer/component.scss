@@ -11,7 +11,13 @@
     top: 30%;
     left: 10%;
 }
-#func-component-container{
+//  图层管理
+#layer-container{
+    position: absolute;
+    z-index: 1;
+}
+// 整个组件通用css,相对于cesium-container 位置
+.com-ui-container{
     position: absolute;
     z-index: 1;
 }
