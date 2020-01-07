@@ -86,15 +86,19 @@ class VisualFieldAnalysisService{
 			}
 		});
 		// 视锥体
-		this.curentFrustums['frustum'] = new Cesium.DebugCameraPrimitive({
-			camera,
-			color: Cesium.Color.YELLOW
-		});
+		// this.curentFrustums['frustum'] = new Cesium.DebugCameraPrimitive({
+		// 	camera,
+		// 	color: Cesium.Color.YELLOW
+		// });
 
 
 		console.log('绘制第一个camera点', position);
 		// this.visualFieldPrimitiveLayer.add(this.curentFrustums['frustums']);
 		// this.viewer.scene.primitives.add(this.curentFrustums.frustum)
+		this.viewer.scene.primitives.add(new Cesium.DebugCameraPrimitive({
+			camera,
+			color: Cesium.Color.YELLOW
+		}))
 		this.isFirstClick = false;
 	}
 
