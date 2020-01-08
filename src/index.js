@@ -4,8 +4,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {CesiumViewerCom} from './module/CesiumViewer/CesiumViewerCom';
-// require('@cesium/Widgets/widgets.css'); // 引入全局样式
-// require('./style.scss');
+import {CesiumConfig} from '@src/config/CesiumConfig'
+// 引入全局样式
 import './style.scss'
 import '@cesium/Widgets/widgets.css'
 
@@ -14,8 +14,11 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux'
 import rootReducer from '@src/store/rootReducer'
 
+// cesium icon 访问令牌
+Cesium.Ion.defaultAccessToken = CesiumConfig.IonAccessToken;
 // debug 
 window.Cesium = Cesium
+
 
 console.log('rootReducer',rootReducer)
 const store = createStore(rootReducer)

@@ -1,0 +1,6 @@
+const CesiumConfig ={
+  //  cesium ion  资源访问口令
+  IonAccessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1OTQ2NjExZS0zMzQ0LTRhYTQtYTE5ZC1lZDA5NzY5NGNjNmQiLCJpZCI6NzY2Niwic2NvcGVzIjpbImFzbCIsImFzciIsImFzdyIsImdjIl0sImlhdCI6MTU3ODQ3MzM5MH0.Z4TumYo8tZNwMkC0IIoZjgU0KS232UdnLfLZf-jedxk'
+}
+
+export {CesiumConfig}

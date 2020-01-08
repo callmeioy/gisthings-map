@@ -1,0 +1,18 @@
+#cesium-container {
+    margin: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#func-list{
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    left: 10%;
+}
+//  图层管理
+#layer-container{
+    position: absolute;
+    z-index: 1;
+}

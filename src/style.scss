@@ -1,2 +1,9 @@
 // 全局样式
 body{margin: 0%;overflow: hidden;}
+// 整个组件通用css,相对于cesium-container 位置
+.com-ui-container{
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+}

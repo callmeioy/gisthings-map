@@ -2,7 +2,7 @@ import React from 'react';
 import {hot} from 'react-hot-loader';
 import { Button } from 'antd';
 import {VisualFieldAnalysisService} from './VisualFieldAnalysisService';
-import './component.scss';
+import './VisualFieldAnalysis.scss';
 
 /**
  * react 组件模板

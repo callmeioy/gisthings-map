@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import imgurl from '@assets/img/a.png';
 import { hot } from 'react-hot-loader';
-import './component.scss';
+import './CesiumViewer.scss';
 import { ViewerService } from '@src/services/ViewerService';
 import { ComponentModuleList } from '@src/module/ComponentModuleList';
 import { Switch } from 'antd';
@@ -42,7 +42,7 @@ class CesiumViewerCom extends React.Component {
         if (switchVal) {
             const parentDom = document.createElement('DIV');
             parentDom.id = item.parentDomId;
-            parentDom.classList.add('com-ui-containe');
+            parentDom.classList.add('com-ui-container');
             cContainerDiv.appendChild(parentDom);
             ReactDOM.render(
                 <item.component></item.component>,

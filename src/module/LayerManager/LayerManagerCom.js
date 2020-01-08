@@ -1,7 +1,7 @@
 import React from 'react';
 import {hot} from 'react-hot-loader';
 import { Input } from 'antd';
-import './component.scss';
+import './LayerManager.scss';
 import {ViewerService} from '@src/services/ViewerService.js';
 import {LayerService} from'@src/services/LayerService.js';
 

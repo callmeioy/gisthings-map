@@ -13,8 +13,9 @@ class ComTemplate extends React.Component {
 
   render(){
     return (
-      <div></div>
+      <div id= 'xxxx'></div>
     );
   }
 }
-export  default hot(module) (ComTemplate);
+hot(module) (ComTemplate)
+export  {ComTemplate} ;

@@ -4,11 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // 用于自动生产h
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 清除上次生成的dist目录
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // 复制静态文件用的
 
-// Cesium源码所在目录
-// const cesiumSource = '本地xxxxxxxx修改源码';
-// const cesiumWorkers = '本地xxxxxxxx修改源码';
-const cesiumSource = 'node_modules/cesium/Source';
+// // 本地Cesium源码所在目录，用于修改源码调试
+const cesiumSource = 'src/lib/cesium/Source';
 const cesiumWorkers = '../Build/Cesium/Workers';
+
+// 使用npm install cesium 安装的 模块
+// const cesiumSource = 'node_modules/cesium/Source';
+// const cesiumWorkers = '../Build/Cesium/Workers';
 
 module.exports = {
   entry: {

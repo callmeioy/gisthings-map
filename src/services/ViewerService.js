@@ -7,7 +7,7 @@ class ViewerService {
   static viewers = [];
   static defaultViewer = null;
   constructor(options){
-    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4ZDdhNmRjMC0yNGMxLTRlYWItYjU5Ny1jZjJjZWIyNWI2YmIiLCJpZCI6NzY2Niwic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1MDExMjI4NH0.e_LkplBoPjo_fSqLsGAb97ypotS0G5tMHJoSxLkqyUw";
+    // Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4ZDdhNmRjMC0yNGMxLTRlYWItYjU5Ny1jZjJjZWIyNWI2YmIiLCJpZCI6NzY2Niwic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1MDExMjI4NH0.e_LkplBoPjo_fSqLsGAb97ypotS0G5tMHJoSxLkqyUw";
   }
   static createViewer(options){
     let {domId,isDefaultViewer} = options;
@@ -22,14 +22,14 @@ class ViewerService {
       // terrainProvider: Cesium.createWorldTerrain({
       //   requestWaterMask:true
       // }),
-        // animation:false,
+        animation:false,
         // baseLayerPicker:true,
         // fullscreenButton:true,
         // homeButton:true,
         // infoBox:false,
         // sceneModePicker:false,
         // selectionIndicator:false,
-        // timeline:true,
+        timeline:false,
         // navigationHelpButton:true,
         // navigationInstructionsInitiallyVisible:true
     }); 
